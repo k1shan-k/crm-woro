@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lead List</title>
+</head>
+<body>
+    <h1>Lead List</h1>
+    <ul>
+        {% for lead in leads %}
+            <li>{{ lead.name }} - {{ lead.email }} {% if lead.is_contact %}(Contact){% endif %} <a href="{% url 'leads:mark_contact' lead.id %}">Mark as contact</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

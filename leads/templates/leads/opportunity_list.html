@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity List</title>
+</head>
+<body>
+    <h1>Opportunity List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Opportunities</th>
+                <th>Account Name</th>
+                <th>Amount</th>
+                <th>Close Date</th>
+                <th>Stage</th>
+                <th>Probability</th>
+                <th>Type</th>
+                <th>Lead Source</th>
+                <th>Owner</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for opportunity in opportunities %}
+            <tr>
+                <td>{{ opportunity.opportunities }}</td>
+                <td>{{ opportunity.account_name }}</td>
+                <td>{{ opportunity.amount }}</td>
+                <td>{{ opportunity.close_date }}</td>
+                <td>{{ opportunity.stage }}</td>
+                <td>{{ opportunity.probability }}</td>
+                <td>{{ opportunity.type }}</td>
+                <td>{{ opportunity.lead_source }}</td>
+                <td>{{ opportunity.owner }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">No opportunities found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
